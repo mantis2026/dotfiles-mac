@@ -1,0 +1,88 @@
+" ==============================================
+" 基础设置
+" ==============================================
+set nocompatible              " 关闭 vi 兼容模式
+filetype off                  " 先关闭文件类型检测
+filetype plugin indent on     " 开启文件类型检测、插件、缩进
+
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,gbk,gb2312,cp936
+
+" ==============================================
+" 界面与显示
+" ==============================================
+set number                    " 显示行号
+set relativenumber            " 相对行号（当前行是绝对行号）
+set cursorline                " 高亮当前行
+set colorcolumn=80            " 80列竖线提示
+set wrap                      " 自动换行
+set linebreak                 " 整词换行
+set scrolloff=5               " 上下保留5行视野
+set sidescrolloff=10
+
+set showcmd                   " 显示正在输入的命令
+set showmode                  " 显示模式
+set laststatus=2              " 永远显示状态栏
+set statusline=%F\ %y\ %r%m\ %=line:%l/%L\ col:%c\ %p%%
+
+set list                      " 显示不可见字符
+set listchars=tab:→\ ,trail:·,extends:»,precedes:«
+
+" ==============================================
+" 搜索
+" ==============================================
+set hlsearch                  " 高亮搜索结果
+set incsearch                 " 实时搜索
+set ignorecase                " 忽略大小写
+set smartcase                 " 有大写时区分大小写
+
+" ==============================================
+" 缩进与格式
+" ==============================================
+set expandtab                 " tab 转空格
+set tabstop=4                 " tab 宽度
+set softtabstop=4
+set shiftwidth=4              " 自动缩进宽度
+set autoindent                " 自动缩进
+set smartindent               " 智能缩进
+set cindent
+set copyindent                " 复制时保留缩进
+
+set formatoptions-=o          " 按 o 不自动加注释
+
+" ==============================================
+" 编辑体验
+" ==============================================
+set mouse=a                   " 开启鼠标
+set clipboard=unnamedplus      " 系统剪贴板互通
+set hidden                    " 允许隐藏未保存缓冲区
+set autoread                  " 文件外部修改自动加载
+set nobackup                  " 不生成备份文件
+set nowritebackup
+set noswapfile                " 不生成 swap 文件
+set updatetime=100            " 更快响应
+
+" ==============================================
+" 快捷键优化
+" ==============================================
+inoremap jj <ESC>             " 快速按 jj 退出插入模式
+nnoremap <leader>w :w<CR>     " 空格 + w 保存
+nnoremap <leader>q :q<CR>     " 空格 + q 退出
+nnoremap <leader>wq :wq<CR>
+
+nnoremap <C-h> <C-w>h         " 窗口切换
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+vnoremap < <gv                 " 连续缩进
+vnoremap > >gv
+
+" ==============================================
+" 主题与配色（内置，无需插件）
+" ==============================================
+syntax enable
+syntax on
+set t_Co=256
+colorscheme desert
